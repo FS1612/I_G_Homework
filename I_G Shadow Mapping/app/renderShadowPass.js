@@ -22,7 +22,7 @@ export function renderShadowPass(values, { lightViewProjectionMatrix }) {
     const lightMvpLocation = this.gl.getUniformLocation(this.shadowProgram, 'u_lightViewProjectionMatrix');
     this.gl.uniformMatrix4fv(lightMvpLocation, false, lightViewProjectionMatrix);
     // === 3. Render the scene into the shadow map ===
-    // This renders all relevant objects (e.g., grass, gnomon) from the light's perspective
+    // This renders all relevant objects from the light's perspective
     this.renderForShadowMap();
     // === 4. Restore default framebuffer and viewport ===
     this.gl.bindFramebuffer(this.gl.FRAMEBUFFER, null);
